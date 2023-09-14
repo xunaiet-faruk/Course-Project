@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "name": "Product 1",
+        "image": "https://example.com/product1.jpg",
+        "credit": "4.5 stars",
+        "price": "$19.99",
+        "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+        "id": 2,
+        "name": "Product 2",
+        "image": "https://example.com/product2.jpg",
+        "credit": "3.8 stars",
+        "price": "$24.99",
+        "details": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+        "id": 3,
+        "name": "Product 3",
+        "image": "https://example.com/product3.jpg",
+        "credit": "4.2 stars",
+        "price": "$29.99",
+        "details": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    {
+        "id": 4,
+        "name": "Product 4",
+        "image": "https://example.com/product4.jpg",
+        "credit": "4.7 stars",
+        "price": "$14.99",
+        "details": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    },
+    {
+        "id": 5,
+        "name": "Product 5",
+        "image": "https://example.com/product5.jpg",
+        "credit": "3.5 stars",
+        "price": "$34.99",
+        "details": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+    },
+    {
+        "id": 6,
+        "name": "Product 6",
+        "image": "https://example.com/product6.jpg",
+        "credit": "4.0 stars",
+        "price": "$27.99",
+        "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+        "id": 7,
+        "name": "Product 7",
+        "image": "https://example.com/product7.jpg",
+        "credit": "4.9 stars",
+        "price": "$9.99",
+        "details": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+        "id": 8,
+        "name": "Product 8",
+        "image": "https://example.com/product8.jpg",
+        "credit": "3.2 stars",
+        "price": "$39.99",
+        "details": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    {
+        "id": 9,
+        "name": "Product 9",
+        "image": "https://example.com/product9.jpg",
+        "credit": "4.6 stars",
+        "price": "$12.99",
+        "details": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+    }
+]
