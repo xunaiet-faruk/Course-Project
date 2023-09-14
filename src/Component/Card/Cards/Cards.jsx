@@ -1,9 +1,10 @@
 
-import Courses from "./Courses";
-const Cards = ({courses}) => {
-    const { image, name, credit, details, price } = courses
+
+const Cards = ({ cours, handleClik }) => {
+   
+    const { image, name, credit, details, price } = cours
     return (
-        <div className="bg-red-100 p-3 rounded-xl">
+        <div className="bg-[#FFFFFF] p-3 rounded-xl">
           
             <div> 
             <img src={image} alt="" />
@@ -14,11 +15,11 @@ const Cards = ({courses}) => {
                 <p> <span className="text-3xl"> $ </span> {price}</p>
                 <div>  
               <button> ICON </button>
-             <p>Credit : {credit} hr </p>  
+                    <p>Credit : <span>{credit} </span> hr </p>  
                 </div> 
                 </div>
                 <div>
-                <button className="bg-[#2F80ED] px-4 py-1 w-full text-center rounded-md mt-3 text-white"> Select</button>
+                <button onClick={() => handleClik(cours)} className="bg-[#2F80ED] px-4 py-1 w-full text-center rounded-md mt-3 text-white"> Select</button>
                 </div>
              
             </div>
@@ -29,3 +30,8 @@ const Cards = ({courses}) => {
 };
 
 export default Cards;
+
+
+
+
+

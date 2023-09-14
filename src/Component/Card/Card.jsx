@@ -1,12 +1,16 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import Cards from "./Cards/Cards";
-import Courses from "./Cards/Courses";
+import Courses from "../Courses/Courses";
+
 
 const Card = () => {
 
-    const [Course , setCourse] =useState([])
+    const [course , setCourse] =useState([])
+    const [Show , setShow] =useState([])
+    const [hours, setHours] = useState(0);
 
+ 
     useEffect(()=>{
         fetch('Public.json')
         .then(res => res.json())
@@ -14,6 +18,31 @@ const Card = () => {
 
 
     },[])
+
+
+    const handleClik = Shows => {
+        
+        const Semilar =Show.find(item => item.id == Shows.id)
+        let count = Shows.credit
+        // console.log(Semilar)
+        if(Semilar){
+            return alert('SORRY THE NAME IS ALREADY SELECTED') 
+        }else{ 
+       
+        Show.forEach((items) =>{
+            count =count + items.credit
+        })
+        if(count > 20){
+            alert('the time hours is finish')
+        }else{ 
+        console.log(count)
+        const newSet = [...Show, Shows]
+        setShow(newSet)
+        setHours(count)
+        }
+        }
+    }
+
 
     return (
         <div className="flex gap-4">
@@ -23,14 +52,14 @@ const Card = () => {
                 {
 
 
-                    Course.map((course) => <Cards key={course.id} courses={course}> </Cards>)
+                    course.map((cours,idx) => <Cards handleClik={handleClik} key={idx} cours={cours}> </Cards>)
 
 
                 }
 
      </div>
             <div className="w-1/4"> 
-         <Courses> </Courses>
+                <Courses hours={hours} Show={Show}></Courses>
          </div>   
         </div>
     );
