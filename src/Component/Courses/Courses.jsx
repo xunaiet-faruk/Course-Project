@@ -10,7 +10,7 @@ console.log(Show)
                 <h1 className=" ml-4 font-bold text-2xl mb-5"> Course Name </h1>
                 {
 
-                    Show.map(person => (<li className="ml-5" key={person.id} > {person.name}</li>))
+                    Show.map(person => (<li className="list-decimal ml-5" key={person.id} > {person.name}</li>))
 
                 }
 
