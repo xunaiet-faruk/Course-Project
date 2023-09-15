@@ -2,43 +2,65 @@ import { useEffect } from "react";
 import { useState } from "react";
 import Cards from "./Cards/Cards";
 import Courses from "../Courses/Courses";
+import Swal from "sweetalert2";
+
 
 
 const Card = () => {
 
     const [course , setCourse] =useState([])
-    const [Show , setShow] =useState([])
-    const [hours, setHours] = useState(0);
+    const [Show, setShow] = useState([])
+    const [hours, setHours] = useState();
+    const [Allprize, setAllprize] = useState(0)
+    const [Remaining, setRemaing] =useState(20)
+  
 
- 
-    useEffect(()=>{
+    useEffect(() => {
         fetch('Public.json')
-        .then(res => res.json())
-        .then(data => setCourse(data))
+            .then(res => res.json())
+            .then(data => setCourse(data))
 
 
-    },[])
-
+    }, [])
+  
+   
 
     const handleClik = Shows => {
         
         const Semilar =Show.find(item => item.id == Shows.id)
         let count = Shows.credit
+        let sum = Shows.price
         // console.log(Semilar)
         if(Semilar){
-            return alert('SORRY THE NAME IS ALREADY SELECTED') 
+            Swal.fire(
+                'Sorry !',
+                'The name is already declared',
+                'error'
+               
+            ) 
         }else{ 
        
         Show.forEach((items) =>{
             count =count + items.credit
+             sum = sum + items.price
+
         })
-        if(count > 20){
-            alert('the time hours is finish')
+        // console.log(count)
+       
+       const remaingdata = 20 - count;
+        if(remaingdata < 0){
+            Swal.fire(
+                'SORRY !',
+                'THE TIME IS FINISHED ALSO THE  REMAINING IS FINISHED',
+                'error'
+            ) 
         }else{ 
-        console.log(count)
+        // console.log(count)
         const newSet = [...Show, Shows]
         setShow(newSet)
         setHours(count)
+        setAllprize(sum)
+        setRemaing(remaingdata)
         }
         }
     }
@@ -47,7 +69,7 @@ const Card = () => {
     return (
         <div className="flex gap-4">
      
-     <div className="w-3/4 grid grid-cols-3 gap-4">
+     <div className="lg:w-3/4 w-2/4 grid lg:grid-cols-3  gap-4">
 
                 {
 
@@ -58,8 +80,8 @@ const Card = () => {
                 }
 
      </div>
-            <div className="w-1/4"> 
-                <Courses hours={hours} Show={Show}></Courses>
+            <div className="lg:w-1/4 w-2/4"> 
+                <Courses Remaining={Remaining} Allprize={Allprize} hours={hours} Show={Show}></Courses>
          </div>   
         </div>
     );

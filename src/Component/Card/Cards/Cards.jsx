@@ -1,4 +1,5 @@
-
+import { FiDollarSign } from 'react-icons/Fi';
+import { BsBook } from 'react-icons/Bs';
 
 const Cards = ({ cours, handleClik }) => {
    
@@ -9,13 +10,14 @@ const Cards = ({ cours, handleClik }) => {
             <div> 
             <img src={image} alt="" />
             </div>
-            <h2 className="text-black font-semibold"> {name} </h2>
-            <p className="text-[#1C1B1B99]"> {details} </p>
-            <div className="text-[#1C1B1B99] flex justify-between items-center">
-                <p> <span className="text-3xl"> $ </span> {price}</p>
-                <div>  
-              <button> ICON </button>
-                    <p>Credit : <span>{credit} </span> hr </p>  
+            <h2 className="text-1xl font-bold mt-2 mb-2"> {name} </h2>
+            <p className="text-[#1C1B1B99] mb-3"> {details} </p>
+            <div className="text-[#1C1B1B99] flex justify-between items-center mb-2">
+                  <FiDollarSign className='text-2xl'></FiDollarSign>
+                   <p className='mr-3'>  Price : {price}</p>
+                <div className="flex">  
+              <button className="mr-6 text-xl">  <BsBook></BsBook></button>
+                    <p>Credit :  <span> {credit} </span> hr </p>  
                 </div> 
                 </div>
                 <div>
